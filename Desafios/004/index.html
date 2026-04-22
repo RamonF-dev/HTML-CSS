@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 9 - Vídeos</title>
+</head>
+<body>
+    <h1>Meus Vídeos Favoritos</h1>
+
+    <!-- Página principal -->
+    <div id="paginaPrincipal">
+        <p>Clique em uma imagem para assistir ao vídeo:</p>
+        <table>
+            <tr>
+                <td><img src="video1.jpg" alt="Vídeo 1" width="200" onclick="abrirVideo('https://www.youtube.com/embed/VIDEO_ID_1')"></td>
+                <td><img src="video2.jpg" alt="Vídeo 2" width="200" onclick="abrirVideo('https://www.youtube.com/embed/VIDEO_ID_2')"></td>
+            </tr>
+            <tr>
+                <td><img src="video3.jpg" alt="Vídeo 3" width="200" onclick="abrirVideo('https://www.youtube.com/embed/VIDEO_ID_3')"></td>
+                <td><img src="video4.jpg" alt="Vídeo 4" width="200" onclick="abrirVideo('https://www.youtube.com/embed/VIDEO_ID_4')"></td>
+            </tr>
+        </table>
+        <p><a href="https://www.youtube.com/curso-completo" target="_blank">Ir para o curso completo</a></p>
+    </div>
+
+    <!-- Área do vídeo -->
+    <div id="videoArea" style="display:none;">
+        <button onclick="voltar()">Voltar</button>
+        <iframe id="player" width="640" height="360" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        function abrirVideo(url) {
+            document.getElementById('paginaPrincipal').style.display = 'none';
+            document.getElementById('videoArea').style.display = 'block';
+            document.getElementById('player').src = url + "?autoplay=1";
+        }
+
+        function voltar() {
+            document.getElementById('videoArea').style.display = 'none';
+            document.getElementById('paginaPrincipal').style.display = 'block';
+            document.getElementById('player').src = ""; // para parar o vídeo
+        }
+    </script>
+</body>
+</html>
