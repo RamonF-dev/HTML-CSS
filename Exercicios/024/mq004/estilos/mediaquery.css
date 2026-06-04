@@ -2,6 +2,28 @@
 
 /*Todas As Demais Midias */
 
+/* Typical Device Brackpoints 
+-----------------------------
+Small devices (mobile phones): up to 600px
+Medium devices (tablets): 600px to 768px
+Large devices (desktops): 768px to 992px
+Extra-large devices (large desktops): 992px to 1200px
+*/
+
 @media print {
         
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px){
+    body{
+        background-image: url(../imagens/back-tablet.jpg);
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px){
+
+}
+
+@media screen and (min-width:1200px){
+
 }
