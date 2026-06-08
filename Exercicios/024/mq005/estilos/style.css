@@ -11,7 +11,8 @@ body, html{
 }
 
 header{
-    background-color: gray;
+    background-color: rgb(124, 124, 124);
+    border-radius: 10px;
 }
 
 header > h1{

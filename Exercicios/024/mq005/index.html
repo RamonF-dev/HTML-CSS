@@ -3,47 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Hamburgeur</title>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <title>Projeto Hambúrguer</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+
     <link rel="stylesheet" href="estilos/style.css">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Media Query</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-  rel="stylesheet">
-  <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/media-query.css">
 </head>
-<body>
-  <header>
-    <h1>Meu Site</h1>
-    <i id="burguer" class="material-icons" onclick="ClickMenu()">menu</i>
-    <menu id="itens">
-      <ul>
-        <li><a href="#">Opção 1</a></li>
-        <li><a href="#">Opção 2</a></li>
-        <li><a href="#">Opção 3</a></li>
-        <li><a href="#">Opção 4</a></li>
-        <li><a href="#">Opção 5</a></li>
-      </ul>
-    </menu>
-  </header>
-  <main>
+<body onresize="mudoutamanho()">
+
+    <header>
+        <h1>Meu Site</h1>
+
+        <i id="burguer" class="material-icons" onclick="ClickMenu()">
+            menu
+        </i>
+
+        <menu id="itens">
+            <ul>
+                <li><a href="#">Opção 1</a></li>
+                <li><a href="#">Opção 2</a></li>
+                <li><a href="#">Opção 3</a></li>
+                <li><a href="#">Opção 4</a></li>
+                <li><a href="#">Opção 5</a></li>
+            </ul>
+        </menu>
+    </header>
+
+    <main>
         <article>
-            <h2>Testando Media Queryes</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla consectetur ullam veritatis tempore, odit enim accusamus dolorum fugit debitis neque, veniam quam aspernatur ea sunt esse nesciunt suscipit nemo voluptatum Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio aliquam totam corrupti perspiciatis pariatur consequuntur a sunt ab ut architecto repudiandae consectetur, illum, sapiente, eaque sequi impedit. Ea, nostrum eius!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In facilis perspiciatis unde delectus ad neque praesentium sequi, molestias accusamus voluptatum quia id labore totam cupiditate. Eaque quibusdam facilis voluptate accusantium?</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae sapiente voluptatem alias libero exercitationem veniam unde animi ullam soluta possimus veritatis iste, quidem obcaecati, tempora placeat architecto, odio nam a. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam sit, natus nesciunt voluptas quos cupiditate eius explicabo officiis sed dolore quae similique aspernatur quo qui corrupti asperiores commodi ad quasi!</p>
+            <h2>Testando Media Queries</h2>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur veniam, libero hic amet officia vel dolor, voluptas, assumenda repellendus sequi culpa omnis minima qui deleniti odit ratione commodi nesciunt et.
+            </p>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores fuga ducimus esse fugiat corporis error voluptas modi possimus vitae! Dolorum id quidem repellendus optio illo, cumque consequuntur reiciendis odio aliquid.
+            </p>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio natus, culpa error obcaecati doloribus ipsa dolorem saepe tenetur nihil, tempore libero officiis amet magni eum laboriosam incidunt nostrum voluptate sint!
+            </p>
         </article>
     </main>
+
     <script>
-        function ClickMenu(){
+        
+        function mudoutamanho(){
+            if (window,innerWidth >= 768) {
+                itens.style.display = 'block'
+            } else {
+                itens.style.display = 'none'
+            }
+        }
+        
+        function ClickMenu() {
             if (itens.style.display == 'block') {
                 itens.style.display = 'none'
-            } else{
+            } else {
                 itens.style.display = 'block'
             }
         }
     </script>
+
 </body>
 </html>
