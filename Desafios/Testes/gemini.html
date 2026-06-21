@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MegaBrain Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* RESET E VARIÁVEIS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-1: #06b6d4; /* Cyan */
+            --accent-2: #a855f7; /* Purple */
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        /* HEADER / GLASSMORPHISM */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 100;
+        }
+
+        header h1 {
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* CONTAINER PRINCIPAL */
+        .container {
+            max-width: 900px;
+            margin: 120px auto 50px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        /* BOTÃO NEON */
+        .btn {
+            background: var(--text-main);
+            color: var(--bg-color);
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            background: var(--accent-1);
+            box-shadow: 0 0 20px var(--accent-1);
+        }
+
+        /* ÁREA DE INTERAÇÃO */
+        #output-box {
+            margin-top: 40px;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #output {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--accent-1);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        /* GRID DE CARDS */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 60px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            text-align: left;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-2);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--accent-2);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>MegaBrain Hub</h1>
+    </header>
+
+    <div class="container">
+        <h2>Desbloqueie seu Foco</h2>
+        <p class="subtitle">A plataforma definitiva para turbinar seus estudos, organizar ideias e ativar o modo produtividade máxima.</p>
+        
+        <button class="btn" onclick="activateBrain()">Ativar MegaBrain ⚡</button>
+        
+        <div id="output-box">
+            <div id="output"></div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h3>🚀 Hiper Foco</h3>
+                <p>Mergulhe profundamente nas suas tarefas bloqueando distrações e utilizando a técnica Pomodoro inteligente.</p>
+            </div>
+            <div class="card">
+                <h3>🧠 Super Memória</h3>
+                <p>Algoritmos de repetição espaçada que garantem que você nunca mais esqueça o que acabou de aprender.</p>
+            </div>
+            <div class="card">
+                <h3>📊 Dados e Análises</h3>
+                <p>Acompanhe seu progresso diário com gráficos detalhados sobre suas horas de estudo e picos de energia.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Array com mensagens motivacionais/foco
+        const quotes = [
+            "Sistema ativado: O foco é a chave que destrava o seu potencial.",
+            "Energia roteada: Pequenos passos todos os dias criam resultados gigantes.",
+            "Processamento máximo: Seu cérebro é um supercomputador. Use-o bem!",
+            "Modo imersão: A distração foi eliminada com sucesso.",
+            "MegaBrain Online: Pronto para construir o futuro."
+        ];
+
+        // Função ativada pelo botão
+        function activateBrain() {
+            const output = document.getElementById('output');
+            
+            // Efeito visual na página
+            document.body.style.background = '#0a0f1d';
+            setTimeout(() => {
+                document.body.style.background = '#0f172a';
+            }, 200);
+
+            // Transição de texto
+            output.style.opacity = 0;
+            
+            setTimeout(() => {
+                const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+                output.innerText = `"${randomQuote}"`;
+                output.style.opacity = 1;
+            }, 300);
+        }
+    </script>
+
+</body>
+</html>
